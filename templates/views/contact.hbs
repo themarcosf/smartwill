@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>smartWill - Contato</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        #contact-link {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <p>Todo projeto desenvolvido em <i>blockchain</i> é imutável após ser colocado em produção, o que significa que ele nunca pode ser modificado ou atualizado novamente. Essa é uma das razões pelas quais segurança é um assunto tão relevante quando se trata de <i>smart contracts</i> e é também um dos fundamentos que os tornam tão seguros contra terceiros - você tem total segurança de que toda vez que ele for executado o resultado será o previsto.</p>
+        <p>Atualmente, estamos testando uma versão <i>beta</i> do nosso sistema, que deverá ser disponibilizada aos interessados durante o quarto trimestre do ano corrente.</p>
+        <p>Caso queira conhecer melhor nosso produto, se manter informado ou tenha alguma sugestão, comentário ou interesse em contribuir com o projeto, não deixe de informar seu e-mail no campo abaixo e teremos prazer em interagir com o objetivo de melhorar nossa solução.</p>
+
+        <form action="submit">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email">
+            <label for="comments">Deixe sua mensagem:</label>
+            <textarea name="comments" cols="30" rows="10"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    
+    {{>footer}}
+</body>
+
+</html>
