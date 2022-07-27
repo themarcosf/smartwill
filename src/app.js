@@ -3,9 +3,6 @@ const path = require("path");
 //npm modules
 const express = require("express");
 const hbs = require("hbs");
-//project module
-require("./db/mongoose");
-const User = require("./models/user");
 
 //setup server
 const app = express();
@@ -60,19 +57,6 @@ app.get("*", (req, res) => {
     name: "3A1,5M Tech Ltda.",
     errorMessage: "Página não encontrada.",
   });
-});
-
-//POST request
-app.post("/contato", (req, res) => {
-  const user = new User(req.body);
-  user
-    .save()
-    .then((result) => {
-      res.send(user);
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
 });
 
 app.listen(port, () => {
