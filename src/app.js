@@ -3,12 +3,14 @@ const path = require("path");
 //npm modules
 const express = require("express");
 const hbs = require("hbs");
+const cors = require("cors");
 //project modules
 require("./db/mongoose");
 const User = require("./models/user");
 
 //setup server
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 //setup handlebars engine and views location
