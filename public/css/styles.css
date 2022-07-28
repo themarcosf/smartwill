@@ -50,3 +50,24 @@ footer {
 footer p {
     text-align: right;
 }
+
+.ui-link {
+    margin-top: 24px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.ui-link a {
+    padding: 12px;
+    border-radius: 5%;
+    text-decoration: none;
+    background-color: #e0e1e2;
+    color: rgba(0,0,0,.6);
+    font-weight: bold;
+}
+
+.email-input {
+    margin-left: 8px;
+    padding: 5px 0;
+}
