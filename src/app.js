@@ -11,7 +11,7 @@ const User = require("./models/user");
 //setup server
 const app = express();
 app.use(cors());
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 //setup handlebars engine and views location
 app.set("view engine", "hbs");
@@ -29,7 +29,7 @@ app.use(express.static(publicDirectoryPath));
 
 //server variables
 const title = "smartWill";
-const name = "3A1,5M Tech Ltda."
+const name = "3A1,5M Tech Ltda.";
 
 //GET requests
 app.get("", (req, res) => {
@@ -55,13 +55,17 @@ app.get("*", (req, res) => {
 //POST request
 app.post("/contato", async (req, res) => {
   const user = new User(req.body);
-  
+
   try {
     await user.save();
-    res.status(201).send(`O email ${user.email} foi cadastrado com sucesso. Você receberá informações do projeto sempre que novas funcionalidades forem implementadas.`);
+    res
+      .status(201)
+      .send(
+        `O email ${user.email} foi cadastrado com sucesso. Você receberá informações do projeto sempre que novas funcionalidades forem implementadas.`
+      );
   } catch (err) {
     res.status(400).send("Favor revisar as informações e tentar novamente.");
-  };
+  }
 });
 
 app.listen(port, () => {
