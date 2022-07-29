@@ -60,7 +60,7 @@ app.post("/contato", async (req, res) => {
     await user.save();
     res.status(201).send(`O email ${user.email} foi cadastrado com sucesso. Você receberá informações do projeto sempre que novas funcionalidades forem implementadas.`);
   } catch (err) {
-    res.status(400).send(`O email ${req.body.email} não foi cadastrado. Favor revisar as informações e tentar novamente.`)
+    res.status(400).send("Favor revisar as informações e tentar novamente.");
   };
 });
 
