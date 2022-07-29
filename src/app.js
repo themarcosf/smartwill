@@ -7,6 +7,7 @@ const cors = require("cors");
 //project modules
 require("./db/mongoose");
 const User = require("./models/user");
+const sendEmail = require("../src/emails/contact");
 
 //setup server
 const app = express();
@@ -58,6 +59,7 @@ app.post("/contato", async (req, res) => {
 
   try {
     await user.save();
+    sendEmail(user.email);
     res
       .status(201)
       .send(
